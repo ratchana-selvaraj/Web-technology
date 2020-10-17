@@ -1,0 +1,65 @@
+.header{
+  padding: 60px;
+  text-align: center;
+  background:brown;
+  color: white;
+  font-size: 30px;
+}
+.column {
+  float: left;
+  width: 20%;
+  padding: 2px;
+  height: 200px;  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.btn-btn{
+  padding: 10px 15px;
+  font-size: 20px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: blue;
+  border: none;
+  border-radius: 10px;
+}
+.button {
+  font: bold 20px Arial;
+  text-decoration: none;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 2px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 2px solid #333333;
+  border-left: 1px solid #CCCCCC;
+}
+.btn{
+    color: black;
+    padding: 11px;
+    font-size: 30px;
+    border: none;
+    cursor: pointer;
+    margin-top: 16px;
+
+}
+.textbox {
+  width: 420px;
+  height: 350px;  
+  padding: 30px;
+  background-image: url("learn.jpeg");
+}
+.btn-contents a {
+    color: #010a0c;
+    font-family: helvetica;
+    text-decoration: none;
+    padding: 16px;
+    margin-top: 16px;
+
+  }

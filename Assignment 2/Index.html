@@ -1,0 +1,136 @@
+<html>
+    <title>Learn with us</title>
+    <body style ="font-family :'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" ng-app="EngApp" > 
+        <script src ='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js'></script>
+       
+        <div class="header"> 
+        <head>
+            <link rel='stylesheet' href='styles.css'>
+            RASH TEACHES ENGLISH
+        </head>
+    </div>
+    <div class="row">
+    <div class="column" ng-controller='EngCtrl1'><!-- displays data to html view -->
+        <div class="btn">Beginner</div>
+        <div ng-repeat=' x in items'  class="button"> <!--acts like loop-->
+            <a href='#' >{{x}}</a> <!--ng-repeat-->
+        </div>
+        </div>
+        <div class= "column" ng-controller='EngCtrl2'> 
+            <div class="btn">Intermediate</div>
+        <div ng-repeat=' x in items' class='button'>
+            <a href='#'>{{x}}</a>  <!--ng-repeat-->
+        </div>
+    </div>
+        <div class= "column" ng-controller='EngCtrl3'>
+            <div class="btn">Advance</div>
+            <div ng-repeat=' x in items' class='button'>
+                <a href='#' >{{x}}</a>  <!--ng-repeat-->
+        </div>
+        </div>
+        <div class= "column">
+        <div  style="background-image: url('learn.jpg'); width: 520 ; height: 340; color : beige; "  ng-desc=""> <!--custom directive-->
+        </div> 
+        </div>
+    </div>
+    <div style=" border-top: 5px dotted brown;"ng-controller="EngCtrl2">
+        <h3>Let's kick start with fundamentals :)</h3>
+        <h3>Try spotting the error</h3>
+        <p>The spectacles is missing</p> 
+        Your Interpretation <input type="text" ng-model="Uans">
+        Check<input type="checkbox" ng-model="myans1">
+        <div ng-show="myans1">
+            <p> The spectacles are missing</p>
+            </div>
+            <p>One must help his siblings.</p> 
+        Your Interpretation <input type="text" ng-model="Uans2"> <!-- binds html data to application data-->
+        Check<input type="checkbox" ng-model="myans2">
+        <div ng-show="myans2">
+            <p> One must help one’s siblings</p>
+            </div>
+    </div>
+    <div  ng-controller="EngCtrl1" >
+        <h3>Wanna play with words!Here we go,</h3>
+        <h5>3 letter Word made out of hint </h5> 
+        <input type="text" ng-init="kp1=3" ng-keypress="kp1=kp1-1" > <!--Ng-keypress(angular events)-->
+        {{kp1}} letter(s) to go!! 
+        <h5>2 letter Word made out of tow</h5>
+        <input type="text" ng-init="kp2=2" ng-keypress="kp2=kp2-1" >
+        {{kp2}} letter(s) to go!!  <br><br>
+        <button class="btn-btn"ng-click="Onclick($event)">Click to know</button>  <!-- ng-click (angular events)-->
+        <div style="padding:5px; border:1px solid black; width:50%; font-weight:bold" ng-show="result">Hope you had fun in finding.Keep learning!</div>
+       </div>
+    </div>
+    <div ng-controller="EngCtrl2" >
+        <h3>Click to know if youknow the meaning of the wordfact</h3>
+        <button class="btn-btn" ng-click="generateWord()"> General Random Word</button> {{wd | uppercase}}
+    </div>
+    <div ng-controller="EngCtrl1" >
+        <h3> Your performance grade</h3>
+        <button class="btn-btn" ng-click="generate()"> Fetch me</button> {{num}}
+    </div>
+    </div>
+    </body>
+    <script>
+        var app = angular.module('EngApp',[]);
+        app.directive('ngDesc',function(){
+            return {
+                template:"<h3 style=>What this website does,?</h3><br><p> RASH TEACHES online using our high-quality resources to quickly improve your English. This website is created for adult learners of English by the British Council, the world's English teaching experts.Start by taking our free English test to help you find your level. Then find lessons and resources to improve your English skills. Get more practice to improve your general English with our extended listening and reading materials. At any time, use the grammar and vocabulary sections to help and support your learning.zz</p>"
+               
+            }
+        })
+        app.factory("wordfact",function(){
+            var obj={};
+            var words=["Smart","Playstation","Thesis","Discovery"]
+            var word = words[Math.floor(Math.random() * words.length)];
+            obj.Displayfun= function(){
+                return word;
+            }
+            return obj;
+        })
+        app.service('mathcal',function(){
+            this.mynum= Math.ceil(Math.random()*9)
+        })
+        app.controller('EngCtrl1',function($scope,mathcal){
+        $scope.items=[
+            'Grammar',
+            'Spelling',
+            'Reading',
+            'Pronunciation'
+        ],
+        $scope.Onclick=function(event){
+            $scope.result=true
+        }
+        $scope.generate=function(){
+            $scope.num=mathcal.mynum;
+        }
+       
+ })
+        app.controller('EngCtrl2',function($scope,wordfact){
+        $scope.items=[
+            'Essay',
+            'Poem',
+            'Story Exploring',
+            'Vocabulary'
+        ]
+        $scope.Validate= function(){
+            $scope.ans1 = Displaymsg.msg1;
+            $scope.ans2 = Displaymsg.msg2;
+            $scope.ans3 = Displaymsg.msg3;
+
+        } 
+        $scope.generateWord=function(){
+            $scope.wd=wordfact.Displayfun();
+        }
+       
+    })
+        app.controller('EngCtrl3',function($scope){
+        $scope.items=[
+            'Get raps with Songs',
+            'Relate with movies',
+            'PLay with words',
+            'Test your fluency'
+        ]})
+
+    </script>
+</html>
