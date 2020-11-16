@@ -1,0 +1,13 @@
+<!ELEMENT EngLearn (level)>
+<!ELEMENT level (beginner,intermediate,advance)>
+<!ELEMENT beginner (module1,module2,module3,module4)>
+<!ELEMENT intermediate (module1,module2,module3,module4)>
+<!ELEMENT advance (module1,module2,module3,module4)>
+<!ELEMENT module1 (#PCDATA)>
+<!ATTLIST module1 xmlns CDATA #FIXED ''>
+<!ELEMENT module2 (#PCDATA)>
+<!ATTLIST module2 xmlns CDATA #FIXED ''>
+<!ELEMENT module3 (#PCDATA)>
+<!ATTLIST module3 xmlns CDATA #FIXED ''>
+<!ELEMENT module4 (#PCDATA)>
+<!ATTLIST module4 xmlns CDATA #FIXED ''>
