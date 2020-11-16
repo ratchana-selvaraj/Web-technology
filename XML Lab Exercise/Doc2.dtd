@@ -1,0 +1,11 @@
+<!ELEMENT EngLearn (Vocabulary)>
+<!ELEMENT Vocabulary (Qn1,Qn2,Qn3)>
+<!ELEMENT Qn1 (word1,word2,word3)>
+<!ELEMENT Qn2 (word1,word2,word3)>
+<!ELEMENT Qn3 (word1,word2,word3)>
+<!ELEMENT word1 (#PCDATA)>
+<!ATTLIST word1 xmlns CDATA #FIXED ''>
+<!ELEMENT word2 (#PCDATA)>
+<!ATTLIST word2 xmlns CDATA #FIXED ''>
+<!ELEMENT word3 (#PCDATA)>
+<!ATTLIST word3 xmlns CDATA #FIXED ''>
