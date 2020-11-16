@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="EngLearn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="level"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="level">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="beginner"/>
+        <xs:element ref="intermediate"/>
+        <xs:element ref="advance"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="beginner">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="module1"/>
+        <xs:element ref="module2"/>
+        <xs:element ref="module3"/>
+        <xs:element ref="module4"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="intermediate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="module1"/>
+        <xs:element ref="module2"/>
+        <xs:element ref="module3"/>
+        <xs:element ref="module4"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="advance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="module1"/>
+        <xs:element ref="module2"/>
+        <xs:element ref="module3"/>
+        <xs:element ref="module4"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="module1" type="xs:string"/>
+  <xs:element name="module2" type="xs:string"/>
+  <xs:element name="module3" type="xs:string"/>
+  <xs:element name="module4" type="xs:string"/>
+</xs:schema>
