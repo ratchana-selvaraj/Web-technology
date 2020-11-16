@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<script>
+var parser, xmlDoc;
+var text = "<EngLearn><Vocabulary>" +
+"<Qn1>" +
+"<word1>Preach</word1>"+"<word2>Bless</word2>"+"<word3>Jostle</word3>" +
+"</Qn1>"+"</Vocabulary></EngLearn>";
+
+parser = new DOMParser();
+xmlDoc = parser.parseFromString(text,"text/xml");
+
+document.getElementById("demo1").innerHTML =
+xmlDoc.getElementsByTagName("word1")[0].childNodes[0].nodeValue;
+document.getElementById("demo2").innerHTML =
+xmlDoc.getElementsByTagName("word2")[0].childNodes[0].nodeValue;
+document.getElementById("demo3").innerHTML =
+xmlDoc.getElementsByTagName("word3")[0].childNodes[0].nodeValue;
+</script>
+
+</body>
+</html>
