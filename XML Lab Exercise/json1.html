@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>The XMLHttpRequest to get the content of a file.</h2>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<script>
+var text = '{"name": "Siddharth","age": "21"}';
+var obj = JSON.parse(text);
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.age; 
+</script>
+</body>
+</html>
