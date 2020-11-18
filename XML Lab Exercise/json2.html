@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JSON Parsing </h2>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<script>
+var text = '{"name": "Siddharth","age": "21","book" : "After ", "author":"Anna todd" ,"price":"$233"}';
+var obj = JSON.parse(text);
+document.getElementById("demo1").innerHTML = "Name	:"+ obj.name ;
+document.getElementById("demo2").innerHTML = "Age	:" +obj.age ;
+document.getElementById("demo3").innerHTML = "Book	:"+obj.book ;
+document.getElementById("demo4").innerHTML = "Author	:"+obj.author ; 
+</script>
+</body>
+</html>
