@@ -12,9 +12,9 @@
     	  </tr>
      	<xsl:for-each select="EngLearn/level">
    	 <tr>
-    		  <td><xsl:value-of select="beginner"/></td>
-      	  <td><xsl:value-of select="intermediate"/></td>
- <td><xsl:value-of select="advance"/></td>
+    		  <td><xsl:value-of select="module1"/></td>
+      	  <td><xsl:value-of select="module2"/></td>
+        <td><xsl:value-of select="module3"/></td>
          </tr>
     	</xsl:for-each>
   </table>
